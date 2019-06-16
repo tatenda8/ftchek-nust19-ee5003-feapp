@@ -1,0 +1,214 @@
+<div class="pl-5 pr-5 ">
+
+    <h4 class="pageHeading  pb-4 pt-3">@{{user.username}} </h4>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="">
+    
+                    <div class="">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                          
+                                <div class="userData ml-3">
+                                    <!-- <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">{{user.firstName}} {{user.lastName}}</h2> -->
+        
+                                </div>
+                                <div class="ml-auto">
+                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-12">
+                                
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                        
+                                        <div class="pr-5">
+                                            <tabset>
+                                              <tab heading="My details" id="tab1">
+                                                  <div class="container">
+                                                      <div class="row">
+                                                          <div class="col-12">
+                                                              <div class="card">
+                                                    
+                                                                  <div class="card-body">
+                                                                      <div class="card-title mb-4">
+                                                                          <div class="d-flex justify-content-start">
+                                                                            
+                                                                              <div class="userData ml-3">
+                                                                                  <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">{{user.firstName}} {{user.lastName}}</h2>
+                                                                                 
+                                                                              </div>
+                                                                              <div class="ml-auto">
+                                                                                  <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                    
+                                                                      <div class="row">
+                                                                          <div class="col-12">
+                                                                              <div class="tab-content ml-1" id="myTabContent">
+                                                                                  <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                                                                      
+                                                    
+                                                                                      <div class="row">
+                                                                                          <div class="col-sm-3 col-md-2 col-5">
+                                                                                              <label style="font-weight:bold;">Username</label>
+                                                                                          </div>
+                                                                                          <div class="col-md-8 col-6">
+                                                                                            {{user.username}}
+                                                                                          </div>
+                                                                                      </div>
+                                                                                      <hr />
+                                                    
+                                                                                      <div class="row">
+                                                                                          <div class="col-sm-3 col-md-2 col-5">
+                                                                                              <label style="font-weight:bold;">Phone</label>
+                                                                                          </div>
+                                                                                          <div class="col-md-8 col-6">
+                                                                                            {{user.phoneNumber}}
+                                                                                          </div>
+                                                                                      </div>
+                                                                                      <hr />
+                                                                                      
+                                                                                      
+                                                                                      <div class="row">
+                                                                                          <div class="col-sm-3 col-md-2 col-5">
+                                                                                              <label style="font-weight:bold;">Email</label>
+                                                                                          </div>
+                                                                                          <div class="col-md-8 col-6">
+                                                                                            {{user.email}}
+                                                                                          </div>
+                                                                                      </div>
+                                                                                      <hr />
+                                                                                      <div class="row">
+                                                                                          <div class="col-sm-3 col-md-2 col-5">
+                                                                                              <label style="font-weight:bold;">Address</label>
+                                                                                          </div>
+                                                                                          <div class="col-md-8 col-6">
+                                                                                            {{user.address}}
+                                                                                          </div>
+                                                                                      </div>
+                                                                                      <hr />
+                                                                                      
+                                                    
+                                                                                  </div>
+                                                                                  
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                    
+                                                    
+                                                                    </div>
+                                                    
+                                                    
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                              </tab>
+                                              <tab heading="My Station">
+                                                  <div class="container">
+                                                      <div class="row">
+                                                          <div class="col-12">
+                                                              <div class="card">
+                                                    
+                                                                  <div class="card-body">
+                                                                    <div class="card-title mb-4">
+                                                                        <div class="d-flex justify-content-start">
+                                                                          
+                                                                            <div class="userData ml-3">
+                                                                                <h2 class="d-block" style="font-size: 1.5rem; font-weight:500">Station</h2>
+                                                                               
+                                                                            </div>
+                                                                            <div class="ml-auto">
+                                                                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                    
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <!-- <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Connected Services</a>
+                                                                                </li>
+                                                                            </ul> -->
+                                                                            <div class="tab-content ml-1" id="myTabContent">
+                                                                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                                                                    
+                                                                                    <hr />
+                                                     
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-3 col-md-2 col-5">
+                                                                                            <label style="font-weight:bold;">Station</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 col-6">
+                                                                                          {{station.name}}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <hr />
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-3 col-md-2 col-5">
+                                                                                            <label style="font-weight:bold;">Address</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 col-6">
+                                                                                          {{station.address}}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <hr />
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-3 col-md-2 col-5">
+                                                                                            <label style="font-weight:bold;">Location</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 col-6">
+                                                                                          {{station.location}}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <hr />
+                                                    
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                    
+                                                    
+                                                                </div>
+                                                    
+                                                    
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                              </tab>
+                                            </tabset>
+                                            
+                                          </div>
+                                       
+    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+ 

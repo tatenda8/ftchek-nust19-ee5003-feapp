@@ -1,0 +1,16 @@
+<div class="paddingX">
+  
+    <form [formGroup]="itemAttributeForm">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name of new Item Attribute</label>
+        <small class=" text-danger"> (Please make sure the attribute name does not contain spaces)</small>
+        <input type="text" class="form-control" formControlName="name" placeholder="Attribute name">
+      </div>
+  
+      <div >
+          <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="itemAttributeForm.invalid">Submit</button>
+      </div>
+  
+    </form>
+  </div>
+  

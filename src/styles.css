@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+.forms {
+    padding-left: 15pc;
+    padding-right: 15pc
+}
+
+.paddingX{
+    
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%
+}
+
+.paddingXleft{
+    padding-top: 5%;
+    padding-left: 15%;
+    
+
+}
+
+.paddingXright{
+    padding-top: 5%;
+    padding-right: 15%
+
+}
+
+.paddingXleftNoTop{
+    padding-left: 15%;
+    
+}
+
+.paddingXrightNoTop{
+    padding-right: 15%
+
+}
+
+.pageHeading{
+    color: midnightblue;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size: 27px;
+}
+
+.pageBackground{
+    /* background: silver; */
+    background-image: url('assets/images/backgrounds/6.png');
+    /* background-repeat: repeat; */
+    background-attachment: scroll;
+    background-position: center; 
+}
+
+.h5Heading{
+    color: midnightblue;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size: 16px;
+}

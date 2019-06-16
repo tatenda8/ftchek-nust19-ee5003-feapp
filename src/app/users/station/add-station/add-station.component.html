@@ -1,0 +1,27 @@
+<div class="paddingX">
+    
+    <div class="paddingXleft paddingXright pb-5">
+        <h4 class="pageHeading  pb-4 pt-2">Add New Station</h4>
+
+      <form [formGroup]="stationForm"> 
+        <div class="form-group" > 
+          <label for="formGroupExampleInput">Station Name</label> 
+          <input type="text" class="form-control" formControlName ="name" placeholder="Name"> 
+        </div>   
+        <div class="form-group">     
+          <label for="formGroupExampleInput2">City located in</label>     
+          <input type="text" class="form-control" formControlName ="location" placeholder="City">   
+        </div> 
+        <div class="form-group">
+          <label for="formGroupExampleInput">Address</label>
+          <input type="text" class="form-control" formControlName ="address" placeholder="Address">
+        </div>
+  
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="stationForm.invalid">Save</button>
+    <!-- <button type="button" class="btn btn-danger" (click)="">Cancel</button> -->
+        
+      </form>
+  
+    </div>
+  
+  </div>

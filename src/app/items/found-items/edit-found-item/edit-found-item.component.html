@@ -1,0 +1,32 @@
+<form class="paddingX" [formGroup]="itemForm">
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+  </div>
+  <select class="custom-select" (change)="onSelect($event.target.value)" formControlName="itemTypeId">
+    <!-- <option selected></option> -->
+    <option *ngFor="let itemType of itemTypes" [value]="itemType.id">{{itemType.name}}</option>
+  </select>
+  </div>
+
+<div class="form-group" formArrayName="attributes"
+  *ngFor="let item of itemForm.get('attributes').controls; let i = index;">
+  <div [formGroupName]="i">
+    <!-- <label for="formGroupExampleInput">{{item.get('property').value}}</label> -->
+    <input type="text" class="form-control" formControlName="value" placeholder="{{item.get('property').value}}">
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect02">Station  </label>
+  </div>
+  <select class="custom-select"  formControlName="stationId">
+    <!-- <option selected></option> -->
+    <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+  </select>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="itemForm.invalid">Save</button>
+<!-- <button type="button" class="btn btn-danger" (click)="">Cancel</button> -->
+</form>

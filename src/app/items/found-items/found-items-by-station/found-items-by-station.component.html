@@ -1,0 +1,45 @@
+<div class="pl-5 pr-5">
+    <h4 class="pageHeading  pb-4 pt-3">Added Items 
+       <a href="portal/add-item" class="float-right pageHeading"><i class="ion-md-add-circle-outline"></i></a> 
+    </h4> 
+
+
+  <table class="table table-striped mt-3">
+  <thead>
+    <th scope="col">Date</th>
+    <th scope="col">Category</th>
+    <th scope="col">Name of Holder</th>
+    <!-- <th scope="col">Identification No.</th> -->
+    <th scope="col">Description</th>
+    <th scope="col"></th>
+
+  </thead>
+  <tbody>
+    
+    <tr class="text-italic" *ngFor="let item of list | paginate: { itemsPerPage: 12, currentPage: p }" >
+      <th class="font-weight-normal">{{ item.dateCreated | date: 'yyyy-MM-dd'}}</th>
+      <th class="font-weight-normal">{{ item.item.itemType.name}}</th>
+      <th class="font-weight-normal">{{ item.item.attributeValues.NameOfHolder}}</th>
+      <!-- <th class="font-weight-normal" *ngIf="item.item.attributeValues.PassportNumber">{{ item.item.attributeValues.PassportNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.IdNumber">{{ item.item.attributeValues.IdNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.CardNumber">{{ item.item.attributeValues.CardNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.CandidateNumber">{{ item.item.attributeValues.CandidateNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.LicenceNumber">{{ item.item.attributeValues.LicenceNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.StudentNumber">{{ item.item.attributeValues.StudentNumber}}</th>
+      <th class="font-weight-normal" *ngIf="item.item.attributeValues.BirthEntryNumber">{{ item.item.attributeValues.BirthEntryNumber}}</th> -->
+      <th class="font-weight-normal">{{ item.item.description}}</th>
+      <!-- <th scope="col"><i class="ion-md-information-circle"></i></th> -->
+      <th scope="col"> <i class="ion-md-trash" (click)="onDelete(item.id)"></i> </th>
+      
+
+      
+    </tr>
+
+  </tbody>
+  </table>
+    <div class="has-text-centered">
+      <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  
+</div>

@@ -1,0 +1,118 @@
+<div class="container-fluid">
+  <div class="paddingXleft paddingXright">
+    <carousel>
+      <slide>
+        <img src="assets/images/carousel/passport.jpg" alt="first slide" style="display: block; width: 100%; height: 190px;">
+        <div class="carousel-caption d-none d-md-block">
+          
+        </div>
+      </slide>
+      <slide>
+        <img src="assets/images/carousel/visa.jpg" alt="second slide" style="display: block; width: 100%; height: 190px;">
+        <div class="carousel-caption d-none d-md-block">
+          
+        </div>
+      </slide>
+      <slide>
+        <img src="assets/images/carousel/license.jpg" alt="third slide" style="display: block; width: 100%; height: 190px;">
+        <div class="carousel-caption d-none d-md-block">
+          
+        </div>
+      </slide>
+    </carousel>
+  </div>
+
+  <!-- <div class="container-fluid ">
+    <app-item-search class=" paddingXleft"> </app-item-search>
+  </div> -->
+
+  <div class="paddingXleft paddingXright ">
+  
+      
+      <form action="" [formGroup]="searchFIForm" 
+      (submit)="searchFoundItem()" action="#">
+      <div class="input-group md-form form-sm form-2 pl-0" >
+          <input class="form-control my-0 py-1 red-border" type="text" 
+          placeholder="Name or document number" formControlName="attributeVal" aria-label="Search">
+          <div class="input-group-append">
+            <button class="input-group-text red lighten-3 btn btn-outline-info"  
+            [disabled]="searchFIForm.invalid"><i class="ion-md-search info"></i></button>
+          </div>
+        </div>
+        </form>
+        
+  
+        
+  </div>
+  
+  
+  <div class="paddingX">
+  
+    <div class ="pl-3" *ngIf="!message">{{searchKW}}</div>
+    <div class ="pl-3" *ngIf="message">{{message}}</div>
+  <div *ngIf="searchKW">
+      <table *ngIf="!message" class="table table-borderless mt-3">
+          <thead>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        
+          </thead>
+          <tbody>
+            
+            <tr class="text-italic" *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p }" >
+              <th class="font-weight-normal">{{ item.item.itemType.name}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.NameOfHolder">for:   {{ item.item.attributeValues.NameOfHolder}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.PassportNumber"> no: {{ item.item.attributeValues.PassportNumber}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.IdNumber">no: {{ item.item.attributeValues.IdNumber}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.CardNumber">no: {{ item.item.attributeValues.CardNumber}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.CandidateNumber">no: {{ item.item.attributeValues.CandidateNumber}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.LicenceNumber">no: {{ item.item.attributeValues.LicenceNumber}}</th>
+              <th class="font-weight-normal" *ngIf="item.item.attributeValues.BirthEntryNumber">no: {{ item.item.attributeValues.BirthEntryNumber}}</th>
+              <th class="font-weight-normal">at: {{ item.station.name}} Station</th>
+              <!-- <th scope="col"><i class="ion-md-information-circle" (click)="openModal(item,template)"></i></th> -->
+              
+        
+              
+            </tr>
+        
+          </tbody>
+          </table>
+        
+            <div class="has-text-centered" *ngIf="!message">
+              <div class="spinner" [ngClass]="{'hidden': !loading }"></div>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          
+  </div>
+   
+  </div>
+  
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Item Info</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+    <app-found-item-details></app-found-item-details>
+    </div>
+  </ng-template>
+
+  <div class="paddingXleftNoTop paddingXrightNoTop" *ngIf="!welcome">
+    <div class="">
+        <div class="">
+            <p class="font-weight-bold text-center">Welcome to Lost Document Repository. 
+              We help you locate your lost cards or documents that appear in public areas.
+            </p>
+            <p class="text-center">Search for your lost item using your name or your card or document number</p>
+            <p class="text-center">You can also report your lost item and once it is found you will be notified!</p>
+            
+          </div>
+    </div>
+  </div>
+
+</div>

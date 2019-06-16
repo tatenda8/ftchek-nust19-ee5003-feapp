@@ -1,0 +1,41 @@
+<div class="pl-3 pr-3 col-md-auto">
+
+    <h4 class="pageHeading  pb-4 pt-3">Applications</h4>
+  <table class="table table-striped mt-3">
+  <thead>
+    <th scope="col">Date</th>
+    <th scope="col">Username</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Station Name</th>
+    <th scope="col">Location</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+
+  </thead>
+  <tbody>
+    
+    <tr class="text-italic" *ngFor="let item of list | paginate: { itemsPerPage: size, currentPage: page, totalItems: total }" >
+      <th class="font-weight-normal">{{item.dateCreated}}</th>
+      <th class="font-weight-normal">{{item.username}}</th>
+      <th class="font-weight-normal">{{item.firstName}} {{item.lastName}}</th>
+      <th class="font-weight-normal">{{item.email}}</th>
+      <th class="font-weight-normal">{{item.phoneNumber}}</th>
+      <th class="font-weight-normal">{{item.stationName}}</th>
+      <th class="font-weight-normal">{{item.stationLocation}}</th>
+      <th scope="col"><i class="ion-md-information-circle"></i></th>
+      <th scope="col"><i class="ion-md-trash" (click)="deleteAppli(item.id)" ></i></th>
+      
+
+      
+    </tr>
+
+  </tbody>
+  </table>
+    <div class="has-text-centered">
+      <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+  
+</div>

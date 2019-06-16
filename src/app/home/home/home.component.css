@@ -1,0 +1,14 @@
+.carouselDiv{
+    padding-left: 15pc;
+    padding-right: 15pc;
+    padding-top: 1pc;
+    height: 49px;
+}
+
+.pageBG{
+    /* background: silver; */
+    background-image: url('../../../assets/images/backgrounds/1.jpg');
+    /* background-repeat: repeat; */
+    background-attachment: scroll;
+    background-position: bottom; 
+}

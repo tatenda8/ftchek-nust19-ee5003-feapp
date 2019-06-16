@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-dark header">
+  <div class="container-left pl-4">
+        <img src= "./../assets/images/logo/dclf_logo_19.jpg"  class="pb-1 pl-2" alt ="logo" width="37" height="36"/>
+      <a href="#" class="navbar-brand pl-3"> lost doc repo</a>
+      <div class="navbar-nav">
+        <ul class="navbar-nav text-right ">
+          <li><a href="/home" class="nav-link">Home</a></li>
+          <li><a href="/stations" class="nav-link" >Stations</a></li>
+          <li><a href="/item-search" class="nav-link" >Search Found Item </a></li>
+          <!-- <li><a href="/agents" class="nav-link">Agents</a></li> -->
+          <li><a href="/report-lost-item" class="nav-link">Report Lost Item</a></li>
+          <li><a href="/found-something" class="nav-link">Found Something</a></li>
+          <li><a href="/contact-us" class="nav-link">Contact Us</a></li>
+          <li class="pl-5" *ngIf="!signedIn"><a routerLink="/login" class=" nav-link pl-5 "><i class="ion-md-log-in"></i></a></li>
+          <li class="pl-5" *ngIf="signedIn"><a class=" nav-link pl-5 " (click)="logout()"><i class="ion-md-log-out"></i></a></li>
+          <li class="pl-2" *ngIf="privileges == 'Agent'"><a href="/portal" class="nav-link">My Portal</a></li>
+          <li class="pl-2" *ngIf="privileges == 'Admin'"><a href="/admin" class="nav-link">My Portal</a></li>
+        </ul>
+        
+      </div>
+      <!-- <ul class="navbar-nav">
+          <li><a routerLink="/login" class=" container-right nav-link text-right "><i class="ion-md-log-in"></i></a></li>
+          <li></li>
+      </ul> -->
+  </div>
+  
+</nav>
+  

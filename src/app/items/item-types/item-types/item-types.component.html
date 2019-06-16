@@ -1,0 +1,30 @@
+<div class="pl-5 pr-5 ">
+
+    <h4 class="pageHeading  pb-4 pt-3">Categories
+        <a href="admin/add-item-type" class="float-right pageHeading"><i class="ion-md-add-circle-outline"></i></a>
+    </h4>
+    <table class="table table-striped mt-3">
+    <thead>
+      <th scope="col">Attribute name</th>
+      <th scope="col">Date Added</th>
+      <th scope="col"></th>
+    </thead>
+  
+    <tbody>
+      
+      <tr class="text-italic" *ngFor="let item of list | paginate: { itemsPerPage: size, currentPage: page, totalItems: total }" >
+        <th class="font-weight-normal">{{ item.name}}</th>
+        <th class="font-weight-normal">{{ item.dateLastUpdated | date: 'yyyy-MM-dd'}}</th>
+        <th scope="col"><i class="ion-md-trash" (click)="deleteType(item.id)"></i></th>
+         
+      </tr>
+  
+    </tbody>
+    </table>
+      <div class="has-text-centered">
+        <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+          <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </div>
+    
+  </div>
+  

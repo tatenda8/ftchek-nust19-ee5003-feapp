@@ -1,0 +1,18 @@
+<div class="paddingXright">
+  <form [formGroup]="feedbackForm">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+    </div>
+   
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Feedback Message</label>
+      <textarea class="form-control" formControlName="message" rows="3"></textarea>
+    </div>
+
+    <div >
+        <button type="button" class="btn btn-secondary" (click)="onSubmit2()" [disabled]="feedbackForm.invalid">Submit</button>
+    </div>
+
+  </form>
+</div>
